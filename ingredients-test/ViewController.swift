@@ -76,9 +76,6 @@ class ViewController: UIViewController, UITableViewDataSource {
       self.attributes = []
       
       for feature in features {
-        let value = feature.text
-        let corners = feature.cornerPoints
-        
         if let block = feature as? VisionTextBlock {
           //print(block.text)
           for line in block.lines {
@@ -139,7 +136,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     _ tableView: UITableView,
     cellForRowAt indexPath: IndexPath) -> UITableViewCell
   {
-    var cell = UITableViewCell.init()
+    let cell = UITableViewCell.init()
     
     if indexPath.row < self.attributes.count {
       cell.textLabel?.text = self.attributes[indexPath.row]
